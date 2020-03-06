@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto p-3 my-3">
+            <p class="h3 float-left"> Service Requests</p>
+            <!-- <a href="" class="btn btn-primary float-right">View</a> -->
+
+        </div>
+    </div>
+    <li *ngFor="let item of items | async" style="list-style: none;">
+    <!-- <div *ngFor="let service of item.serviceRequests"> -->
+        <div class="card border-1">
+            <div class="card-body">
+                <!-- {{ service | json}} -->
+                {{item.serviceRequests | json}}
+            </div>
+        </div>
+
+    <!-- </div> -->
+
+
+    <!-- </li> -->
+    <!-- <li *ngFor="let item of user | async" style="list-style: none;"> -->
+        <!-- <div *ngFor="let service of item.serviceRequests"> -->
+            <!-- <div class="card border-1 mt-3"> -->
+                <!-- <div class="card-body"> -->
+                    <!-- {{ service | json}} -->
+                    <!-- {{user | json}} -->
+                <!-- </div> -->
+            <!-- </div> -->
+    
+        <!-- </div> -->
+    
+    
+        <!-- </li> -->
+
+</div>
