@@ -58,18 +58,44 @@ export class GarageComponent implements OnInit {
     });
   }
 
-  rejectJob = (user)=>{
-    this.db.collection('/garages').doc("7378956754").ref.get().then((doc) => {
+  rejectJob = (user,id="7378956754")=>{
+    this.db.collection('/garages').doc(id).ref.get().then((doc) => {
       if (doc.exists) {
         let  services = doc.data()["serviceRequests"];
         delete services[user]
-        this.db.collection('/garages').doc("7378956754").update({serviceRequests:services})
+        this.db.collection('/garages').doc(id).update({serviceRequests:services})
         // console.log(doc.data().vehicles[this.items["serviceRequests"][id]["vehicle"];])
         // this.vehicles[id] = doc.data().vehicles[this.items["serviceRequests"][id]["vehicle"]];
       } else {
         console.log("No such document!");
       }
     });
+  }
+
+  acceptJob = (user,vehicle)=>{
+    var garages;
+    var garageid = "7378956754"
+    this.db.collection('/users').doc(user).ref.get().then((doc)=>{
+      garages = doc.data().requestedServices[vehicle]['garageList'];
+      // console.log(garages[0]);
+      garages.forEach(element => {
+        if(element != garageid)
+        {
+          this.rejectJob(user,element)
+        }
+      });
+    })
+    // this.db.collection('/garages').doc("7378956754").ref.get().then((doc) => {
+    //   if (doc.exists) {
+    //     let  services = doc.data()["serviceRequests"];
+    //     delete services[user]
+    //     this.db.collection('/garages').doc("7378956754").update({serviceRequests:services})
+    //     // console.log(doc.data().vehicles[this.items["serviceRequests"][id]["vehicle"];])
+    //     // this.vehicles[id] = doc.data().vehicles[this.items["serviceRequests"][id]["vehicle"]];
+    //   } else {
+    //     console.log("No such document!");
+    //   }
+    // });
   }
 
 }

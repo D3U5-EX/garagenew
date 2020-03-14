@@ -83,7 +83,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Accept</button>
+          <button type="button" class="btn btn-primary" (click)="acceptJob(customerId,items.serviceRequests[customerId]['vehicle'])">Accept</button>
           <button type="button" class="btn btn-Danger" (click) = "rejectJob(customerId)" data-dismiss="modal">Reject</button>
         </div>
       </div>
