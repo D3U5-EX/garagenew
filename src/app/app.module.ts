@@ -4,7 +4,7 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule,FirestoreSettingsToken} from '@angular/fire/firestore';
 import { RouterModule } from '@angular/router';
 import {environment} from '../environments/environment';
-
+import {FormsModule} from '@angular/forms'
 // import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GarageComponent } from './garage/garage.component';
@@ -16,6 +16,7 @@ import { GarageComponent } from './garage/garage.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     // AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
