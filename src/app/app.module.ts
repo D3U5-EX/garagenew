@@ -8,11 +8,13 @@ import {FormsModule} from '@angular/forms'
 // import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GarageComponent } from './garage/garage.component';
+import { AcceptedJobsComponent } from './accepted-jobs/accepted-jobs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GarageComponent
+    GarageComponent,
+    AcceptedJobsComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +23,8 @@ import { GarageComponent } from './garage/garage.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     RouterModule.forRoot([
-      {path:'garage',component: GarageComponent}
+      {path:'garage',component: GarageComponent},
+      {path:'accepted',component: AcceptedJobsComponent}
     ])
   ],
   providers: [],

@@ -103,6 +103,7 @@ export class GarageComponent implements OnInit {
       vehicleNumber:vehicle,
       vehicleOwner: this.items['serviceRequests'][user]['name'],
       vehicleType: this.vehicles[user]["type"],
+      vehicleModel: this.vehicles[user]["model"],
       inDate:inDate,
       outDate:outDate,
       jobs:this.jobcardata

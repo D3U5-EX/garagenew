@@ -24,6 +24,9 @@
                 Type:
                 {{vehicles[item["key"]]["type"]}}
                 <br>
+                Model:
+                {{vehicles[item["key"]]["model"]}}
+                <br>
                 <button class="btn btn-primary btn-sm" style="border-radius: 2rem;" data-toggle="modal" data-target="#ViewJobModal" (click)="viewJob(item['key'],items.serviceRequests[item['key']]['vehicle'])">View Job</button>
             </div>
         </div>
