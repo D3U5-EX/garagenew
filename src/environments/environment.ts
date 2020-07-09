@@ -4,15 +4,7 @@
 
 export const environment = {
   production: false,
-  firebase:{
-    apiKey: "AIzaSyDOUW48O41LIMnknX_Wrc4BJCUx6DHJ03g",
-    authDomain: "attendence-c205e.firebaseapp.com",
-    databaseURL: "https://attendence-c205e.firebaseio.com",
-    projectId: "attendence-c205e",
-    storageBucket: "attendence-c205e.appspot.com",
-    messagingSenderId: "750768086037",
-    appId: "1:750768086037:web:a6533736a987b108e9421c"
-  }
+ 
 };
 
 /*
